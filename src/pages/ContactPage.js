@@ -7,34 +7,71 @@ export default function ContactPage() {
     const handleChange = (e) => {
         const value = e.target.value;
         const name = e.target.name;
-        setInputs(values => ({ }))
+        setInputs(values => ({...values, [name]: value}))
     }
   return (
     <div>
       <h1 className="text-center text-3xl font-bold">Nous contacter</h1>
-      <form method="GET" className='px-20 pt-10'>
+      <form method="GET" className="px-20 pt-10">
         {/* <!-- Prénom et nom --> */}
         <div className="flex items-center justify-between space-x-3">
-          <Input label="Prénom" id="fName" value={inputs.fName} onChange={handleChange}/>
-          <Input label="Nom" id="lName" />
+          <Input
+            label="Prénom"
+            id="fName"
+            value={inputs.fName}
+            onChange={handleChange}
+          />
+          <Input
+            label="Nom"
+            id="lName"
+            value={inputs.lName}
+            onChange={handleChange}
+          />
         </div>
         {/* <!-- email et password --> */}
         <div className="flex items-center justify-between space-x-3">
-          <Input label="Email" id="email" type="email" />
-          <Input label="Mot de passe" id="password" type="password" />
+          <Input
+            label="Email"
+            id="email"
+            type="email"
+            value={inputs.email}
+            onChange={handleChange}
+          />
+          <Input
+            label="Mot de passe"
+            id="password"
+            type="password"
+            value={inputs.password}
+            onChange={handleChange}
+          />
         </div>
         {/* <!-- addresse --> */}
         <div className="flex items-center">
-          <Input label="Adresse" id="address" />
+          <Input
+            label="Adresse"
+            id="address"
+            value={inputs.address}
+            onChange={handleChange}
+          />
         </div>
         {/* <!-- addresse_2 --> */}
         <div className="flex items-center justify-between">
-          <Input label="Adresse 2" id="second-address" />
+          <Input
+            label="Adresse 2"
+            id="secondAddress"
+            value={inputs.secondAddress}
+            onChange={handleChange}
+          />
         </div>
         <div className="flex items-center justify-between space-x-3">
           {/* <!-- ville --> */}
           <div className="w-[50%]">
-            <Input label="Ville" id="city" />
+            <Input
+              label="Ville"
+              id="city"
+              value={inputs.city}
+              onChange={handleChange}
+            />
           </div>
           {/* <!-- stack --> */}
           <div className="w-[50%] flex">
@@ -57,7 +94,13 @@ export default function ContactPage() {
             </div>
             {/* <!-- code postal --> */}
             <div className="col30">
-                <Input label="Code postal" type="number"/>
+              <Input
+                label="Code postal"
+                id="postalCode"
+                type="number"
+                value={inputs.postalCode}
+                onChange={handleChange}
+              />
             </div>
           </div>
         </div>
